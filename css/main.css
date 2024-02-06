@@ -58,7 +58,7 @@ header a{
     color: #FFFFFF;
 }
 
-.section a{
+.block a {
     text-decoration: none;
 }
 
@@ -153,16 +153,13 @@ img {
     border-radius: 16px;
     padding: 8px;
     margin-top: 10px;
+    margin-right: 8px;
+    margin-left: 8px;
     background: #e7e8ee;
 }
 
 .section{
     padding: 4px;
-}
-
-.section-desc{
-    font-size: 14px;
-    color: #64748b;
 }
 
 .section-messages{
@@ -294,7 +291,9 @@ input[type="text"], input[type="email"]{
     height: 20px;
 }
 
-
+.section-desc{
+    display: none;
+}
 
 @media (min-width: 360px) {
     .sign{ 
@@ -353,6 +352,14 @@ input[type="text"], input[type="email"]{
     .comment-text{ font-size: 16px; }
     input[type="text"], input[type="email"]{
         width: 33.33%;
+    }
+    .block{
+        margin: 4px;
+    }
+    .section-desc{
+        display: block;
+        font-size: 14px;
+        color: #64748b;
     }
 }
 
