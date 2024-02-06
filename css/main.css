@@ -1,0 +1,395 @@
+body{
+    background: #f9f9ff;
+    margin:0;
+    padding:0;
+
+    font-family: 'Roboto', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 20px;
+    color: #000000;
+}
+
+header{
+    position: relative;
+    width: 100%;
+    height: 60px;
+    left: 0px;
+    top: 0px;
+    z-index: 1;
+    background: #2e3036;
+
+    font-size: 17px;
+    line-height: 24px;
+
+    color: #FFFFFF;
+}
+
+.space_between{
+    display: flex;
+    justify-content: space-between;
+}
+
+.centered_page{ 
+    margin: auto; 
+    margin-top: 0;
+    padding: 5px; 
+}
+
+.flex_row{
+    display: block;
+}
+
+.min_height{
+    min-height: 100vh;
+}
+
+#theme{
+    position: absolute;
+    left: 1200px;
+    top: 90px;
+}
+
+/*Здесь пойдет хедер с менюшкой*/
+
+header a{
+    text-decoration: none;
+    color: #FFFFFF;
+}
+
+.section a{
+    text-decoration: none;
+}
+
+#logo{
+    margin:13px;
+}
+
+.link{
+    background: none;
+    border: none;
+    text-decoration: none;
+    font-family: inherit;
+    font-size: inherit;
+    color: inherit;
+    cursor: pointer;
+}
+
+.sign{
+    display: flex;
+    flex-direction: column;
+    margin-right: 10px;
+}
+
+.dropdown{
+    position: relative;
+}
+
+.dropdown-menu{
+    position: absolute;
+    right: 30px;
+    top: calc(100% + .6rem);
+    background: white;
+    color: black;
+    padding: .75rem;
+    border-radius: .25rem;
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, .1);
+    font-size: 18px;
+    pointer-events: none;
+    opacity: 0;
+    transform: translateY(-10px);
+    transition: opacity 150ms ease-in-out, transform 150ms ease-in-out;
+}
+
+.dropdown.active > .link + .dropdown-menu{
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+}
+
+h2{
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 20px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+h4 {
+    font-weight: 500;
+    font-size: 16px;
+    margin-top: 4px;
+    margin-bottom: 4px;
+    color: black;
+}
+
+h6, h5{margin: 0px}
+
+.divider{
+    height: 1px;
+    background: #c5c6d0;
+}
+
+/*Главный div. В нем пишется весь текст статьи*/
+.main{
+    position: relative;
+    margin: 10px
+}
+
+/*Это сами статьи пошли*/
+.main-articles{
+    position: relative;
+    display: flex;
+    flex-flow: column;
+}
+
+img {
+    height: auto;
+    max-width: 100%;
+}
+
+.block{
+    border-radius: 16px;
+    padding: 8px;
+    margin-top: 10px;
+    background: #e7e8ee;
+}
+
+.section{
+    padding: 4px;
+}
+
+.section-desc{
+    font-size: 14px;
+    color: #64748b;
+}
+
+.section-messages{
+    font-size: 14px;
+    color: #64748b;
+}
+
+.comment{
+    background: #FFFAFA;
+    margin-top: 10px;
+}
+
+.comment-text{
+    font-size: 14px;
+}
+
+h4.title{
+    margin: 0px;
+}
+
+h4 a{
+    text-decoration: none;
+    color: #000000;
+}
+
+.short, .side{
+    display: none;
+}
+
+.see-more{ display: none; }
+
+.data-icons{
+    padding-top: 10px;
+    height: 40px;
+    display: flex;
+}
+
+.data-icons div{
+    display: flex;
+    align-items: center;
+    margin-right: 40px;
+}
+
+.data-icons span, .data-icons a{
+    margin-left: 10px;
+}
+
+.data-icons img, .icon{
+    padding-top: 9px;
+    height: 30px;
+    width: 30px;
+}
+
+
+footer{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    width: 100%;
+    height: 100px;
+    left: 0px;
+    bottom: 0px;
+    z-index: 1;
+
+    background: #2e3036;
+
+    font-size: 15px;
+    line-height: 22px;
+    
+    color: #FFFFFF;
+}
+
+footer div{
+    margin:5px 10px;
+}
+
+/*Кнопки в редактировании тегов*/
+
+.right_left{ display: none; }
+.up_down{
+    display: flex;
+    flex-direction: row;
+}
+
+/* Здесь начинается форма*/
+form{
+    font-size: 18px;
+}
+
+textarea{
+    resize: vertical;
+    width: 100%;
+    min-height: 60px;
+    max-height: 300px;
+}
+
+textarea.article{
+    min-height: 200px;
+    max-height: 1000px;
+}
+
+textarea.short{
+    display: none;
+    min-height: 100px;
+    max-height: 400px;
+}
+
+textarea.short.active{
+    display: block;
+}
+
+input:required:invalid{
+      border:2px solid red;
+      border-radius: 2px;
+}
+
+input:required:valid{
+      border:2px solid green;
+      border-radius: 2px;
+}
+
+input{
+    display: block;
+    margin: 15px 0px;
+}
+
+input[type="text"], input[type="email"]{
+    width: 200px;
+    height: 20px;
+}
+
+
+
+@media (min-width: 360px) {
+    .sign{ 
+        margin: 13px;
+        flex-direction: row;
+    }
+    .sign a{
+        margin-inline: 13px;
+    }
+    .dropdown{
+        margin: 13px;
+    }
+}
+
+@media (min-width: 768px){
+    .col-1 {width: 8.33%;}
+    .col-2 {width: 16.66%;}
+    .col-3 {width: 25%;}
+    .col-4 {width: 33.33%;}
+    .col-5 {width: 41.66%;}
+    .col-6 {width: 50%;}
+    .col-7 {width: 58.33%;}
+    .col-8 {width: 66.66%;}
+    .col-9 {width: 75%;}
+    .col-10 {width: 83.33%;}
+    .col-11 {width: 91.66%;}
+    .col-12 {width: 100%;}
+    header{ font-size: 20px;}
+    h2 {font-size: 20px;}
+    h4 {font-size: 19px;}
+    .short{
+        display: block;
+        margin-bottom: 10px;
+    }
+    .see-more{
+        display: inline;
+        border: 1px solid;
+        border-radius: 3px;
+        text-decoration: none;
+        color: #000000;
+        padding: 5px;
+    }
+    .data-icons img{
+        height: 35px;
+        width: 35px;
+    }
+    footer{ 
+        flex-direction: row;
+        height: 50px;
+        font-size: 16px;
+    }
+    body{ 
+        font-size: 18px;
+        line-height: 24px;
+    }
+    .comment-text{ font-size: 16px; }
+    input[type="text"], input[type="email"]{
+        width: 33.33%;
+    }
+}
+
+
+@media (min-width: 1200px){
+    .col-lg-1 {width: 8.33%;}
+    .col-lg-2 {width: 16.66%;}
+    .col-lg-3 {width: 25%;}
+    .col-lg-4 {width: 33.33%;}
+    .col-lg-5 {width: 41.66%;}
+    .col-lg-6 {width: 50%;}
+    .col-lg-7 {width: 58.33%;}
+    .col-lg-8 {width: 66.66%;}
+    .col-lg-9 {width: 75%;}
+    .col-lg-10 {width: 83.33%;}
+    .col-lg-11 {width: 91.66%;}
+    .col-lg-12 {width: 100%;}
+    h2 {font-size: 22px;}
+    h4 {font-size: 21px;}
+    .flex_row{
+        display: flex;
+        flex-direction: row;
+    }
+    .side{
+        display: block;
+        background: #F5B393;
+    }
+    footer{ font-size: 18px; }
+    body{ 
+        font-size: 19px;
+        line-height: 28px;
+    }
+    .comment-text{ font-size: 17px; }
+    input[type="text"], input[type="email"]{
+        width: 25%;
+        max-width: 300px;
+    }
+    .right_left{ display: block; }
+    .up_down {display: none; }
+}
