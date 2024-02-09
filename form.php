@@ -69,7 +69,7 @@ if($_POST){
         echo '<h2>Изображения</h2>';
         for ($i = 0; $i < count($imgFilenames); $i++) {
             ?>
-            <img src="<?=$imgFilenames[$i]?>"/>
+            <img width="700" src="<?=$imgFilenames[$i]?>"/>
             <?php
         }
     }
