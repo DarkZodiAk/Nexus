@@ -27,20 +27,20 @@ $name = (!empty($_COOKIE['name'])) ? $_COOKIE['name'] : $_POST['name'];
     <input type="radio" name="section" value="java">Java<br>
     Подраздел:<br>
     <select name="subsection">
-        <option value="0" selected>C++: Сети
-        <option value="1">C++: WinAPI
-        <option value="2">Java для начинающих
-        <option value="3">PostgreSQL
+        <option value="cpp_networks" selected>C++: Сети
+        <option value="cpp_winapi">C++: WinAPI
+        <option value="java_for_beginners">Java для начинающих
+        <option value="postgresql">PostgreSQL
     </select><br>
     Теги:<br>
     <select name="tags" multiple>
-        <option value="0">java
-        <option value="1" selected>c++
-        <option value="2">бд
-        <option value="3">asio
-        <option value="4">рекурсия
-        <option value="5">postgresql
-        <option value="6">windows
+        <option value="java">java
+        <option value="cpp" selected>c++
+        <option value="db">бд
+        <option value="asio">asio
+        <option value="recursion">рекурсия
+        <option value="postgresql">postgresql
+        <option value="windows">windows
     </select><br>
     Сообщение:<br>
     <textarea name="message" rows="5" cols="30"></textarea><br>
