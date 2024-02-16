@@ -1,3 +1,5 @@
+<?php session_start(["use_strict_mode" => true]); ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -16,13 +18,22 @@
         <span id="logo">
             <a href="/" >Nexus</a>&nbsp;&nbsp;
         </span>
-            <div class="sign">
-                <a href="/">
-                    <span>Регистрация</span>
-                </a>
-                <a href="/">
-                    <span>Войти</span>
-                </a>
-            </div>
+        <?php if (!isset($_SESSION['username'])){ ?>
+        <div class="sign">
+            <a href="/">
+                <span>Регистрация</span>
+            </a>
+            <a href="?page=login">
+                <span>Войти</span>
+            </a>
         </div>
+        <?php } else { ?>
+        <div class="sign">
+            <span><?=$_SESSION['username']?></span>
+            <a href="logic/auth.php?logout=1">
+                <span>Выйти</span>
+            </a>
+        </div>
+        <?php } ?>
+    </div>
 </header>
