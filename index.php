@@ -8,10 +8,10 @@
         <?php
             if (!isset($_GET['page'])){
                 require 'main_page.php';
-                require 'login.php';
-            } /*elseif ($_GET['page'] == "login"){
-
-            }*/
+            } elseif ($_GET['page'] == "login"){
+                if(isset($_SESSION["username"])) require 'main_page.php';
+                else require 'login.php';
+            }
         ?>
 
     </div>
