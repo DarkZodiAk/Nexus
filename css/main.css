@@ -271,10 +271,10 @@ textarea.short.active{
     display: block;
 }
 
-input:required:invalid{
+/*input:required:invalid{
       border:2px solid red;
       border-radius: 2px;
-}
+}*/
 
 input:required:valid{
       border:2px solid green;
