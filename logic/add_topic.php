@@ -1,18 +1,16 @@
 <?php
-$imgFilenames = [];
-if(!empty($_FILES)) {
-    for ($i = 0; $i < count($_FILES['picture']['tmp_name']); $i++) {
-        if (!empty($_FILES['picture']['tmp_name'][$i])) {
-            $file = fopen($_FILES['picture']['tmp_name'][$i], 'r+');
-            $target_dir = "uploads/";
-            $ext = explode('.', $_FILES["picture"]["name"][$i]);
-            $ext = $ext[count($ext) - 1];
-            $filename = 'file' . rand(100000, 999999) . '.' . $ext;
-            move_uploaded_file($_FILES["picture"]["tmp_name"][$i], $target_dir . $filename);
-            array_push($imgFilenames, $target_dir . $filename);
-        }
-    }
-}
+    session_start(["use_strict_mode" => true]);
+    require('../db/dbconnect.php');
+    $query = "INSERT INTO nexus.`topics`(name, subsection_id, author_id) 
+        VALUES ('". $_POST['title'] ."', " . $_SESSION['subsection_id'] .", " . $_SESSION['user_id'] .");";
+    $conn->query($query);
 
-setcookie('name', $_POST['name']);
-?>
+    $topic_id = $conn->lastInsertId();
+
+    $query = "CALL nexus.send_message(".$_SESSION['user_id'] .","
+        . $topic_id .",'" . $_POST["editorContent"] ."')";
+    $_SESSION['query'] = $query;
+    $conn->query($query);
+
+    header("Location: ../index.php?page=topics&subsection=".$_SESSION['subsection_id']);
+    die();

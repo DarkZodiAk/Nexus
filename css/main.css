@@ -11,6 +11,10 @@ body{
     color: #000000;
 }
 
+p {
+    margin: 0;
+}
+
 header{
     position: relative;
     width: 100%;
@@ -124,6 +128,14 @@ h4 {
     color: black;
 }
 
+h5 {
+    font-weight: 500;
+    font-size: 14px;
+    margin-top: 2px;
+    margin-bottom: 2px;
+    color: black;
+}
+
 h6, h5{margin: 0px}
 
 .divider{
@@ -165,6 +177,14 @@ img {
 .section-messages{
     font-size: 14px;
     color: #64748b;
+}
+
+.subsection-desc{
+    font-size: 16px;
+}
+
+.message-header{
+    font-size: 15px;
 }
 
 .comment{
@@ -324,6 +344,7 @@ input[type="text"], input[type="email"]{
     header{ font-size: 20px;}
     h2 {font-size: 20px;}
     h4 {font-size: 19px;}
+    h5 {font-size: 17px;}
     .short{
         display: block;
         margin-bottom: 10px;
@@ -379,6 +400,7 @@ input[type="text"], input[type="email"]{
     .col-lg-12 {width: 100%;}
     h2 {font-size: 22px;}
     h4 {font-size: 21px;}
+    h5 {font-size: 19px;}
     .flex_row{
         display: flex;
         flex-direction: row;

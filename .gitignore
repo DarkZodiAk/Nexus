@@ -25,3 +25,4 @@ Homestead.json
 files/articles/*.php
 
 db/pdoconfig.php
+img/*

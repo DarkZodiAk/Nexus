@@ -1,33 +1,25 @@
-<h2>Section 1</h2>
-<div class="block">
-    <a href="/">
-        <div class="section">
-            <h4>C++</h4>
-            <div class="section-desc">Understandable, have a nice day</div>
-            <div class="section-messages">Сообщений: 118</div>
-        </div>
-    </a>
-    <div class="divider"></div>
-    <div class="section">
-        <h4>Kotlin</h4>
-        <div class="section-desc">Some Kotlin</div>
-        <div class="section-messages">Сообщений: 72</div>
-    </div>
-</div>
+<?php
+    $sections = $conn->query("SELECT * FROM nexus.`sections`");
+    while($row = $sections->fetch()){
+?>
 
-<h2>Section 2</h2>
+<h2><?=$row['name']?></h2>
 <div class="block">
-    <div class="section">
-        <a href="/">
-            <h4>C++</h4>
+    <?php
+        $subsections = $conn->query("SELECT * FROM nexus.`subsections` WHERE section_id = " . $row['id']);
+        $i = 0;
+        while($row = $subsections->fetch()){
+            if($i > 0) echo "<div class=\"divider\"></div>";
+    ?>
+        <a href="?page=topics&subsection=<?=$row['id']?>">
+            <div class="section">
+                <h4><?=$row['name']?></h4>
+                <div class="section-desc"><?=$row['description']?></div>
+                <div class="section-messages">Сообщений: <?=$row['messages']?></div>
+            </div>
         </a>
-        <div class="section-desc">Understandable, have a nice day</div>
-        <div class="section-messages">Сообщений: 118</div>
-    </div>
-    <div class="divider"></div>
-    <div class="section">
-        <h4>Kotlin</h4>
-        <div class="section-desc">Some Kotlin</div>
-        <div class="section-messages">Сообщений: 72</div>
-    </div>
+    <?php $i++; } ?>
 </div>
+<?php } ?>
+
+
