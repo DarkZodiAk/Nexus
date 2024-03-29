@@ -9,6 +9,10 @@
             if(isset($_SESSION["username"])) require 'main_page.php';
             else require 'login.php';
             break;
+        case "register":
+            if(isset($_SESSION["username"])) require 'main_page.php';
+            else require 'register.php';
+            break;
         case "topics":
             require 'topics.php';
             break;

@@ -21,7 +21,7 @@
         </span>
         <?php if (!isset($_SESSION['username'])){ ?>
         <div class="sign">
-            <a href="/">
+            <a href="?page=register">
                 <span>Регистрация</span>
             </a>
             <a href="?page=login">
