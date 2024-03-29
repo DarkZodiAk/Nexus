@@ -9,6 +9,15 @@
             if(isset($_SESSION["username"])) require 'main_page.php';
             else require 'login.php';
             break;
+        case "topics":
+            require 'topics.php';
+            break;
+        case "show_topic":
+            require 'show_topic.php';
+            break;
+        case "write_topic":
+            require 'write_topic.php';
+            break;
         default:
             require 'main_page.php';
             break;
